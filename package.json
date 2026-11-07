@@ -1,0 +1,105 @@
+{
+  "name": "rawcut",
+  "version": "1.0.0",
+  "description": "Free, open-source AI video editor. Record your screen, connect your own AI (Claude Code, Codex, Ollama or any API key) and it edits with real b-roll, real memes and real sound effects. No AI-generated media.",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "node server.js --open",
+    "serve": "node server.js",
+    "app": "electron .",
+    "dist": "electron-builder",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
+  },
+  "dependencies": {
+    "@huggingface/transformers": "^3.7.1",
+    "express": "^4.21.2",
+    "ffmpeg-static": "^5.2.0"
+  },
+  "devDependencies": {
+    "electron": "^45.2.3",
+    "electron-builder": "^26.18.0"
+  },
+  "bin": {
+    "rawcut": "bin/rawcut.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "video-editor",
+    "screen-recorder",
+    "ai",
+    "claude-code",
+    "codex",
+    "ollama",
+    "b-roll",
+    "memes",
+    "ffmpeg",
+    "whisper"
+  ],
+  "build": {
+    "appId": "app.rawcut.editor",
+    "productName": "Rawcut",
+    "files": [
+      "server.js",
+      "lib/**",
+      "public/**",
+      "electron/**",
+      "package.json",
+      "!data/**"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**",
+      "node_modules/onnxruntime-node/**",
+      "node_modules/sharp/**",
+      "node_modules/@img/**"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "mac": {
+      "category": "public.app-category.video",
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "hardenedRuntime": true,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "extendInfo": {
+        "NSMicrophoneUsageDescription": "Rawcut records your microphone while you record your screen.",
+        "NSCameraUsageDescription": "Rawcut can record your camera.",
+        "NSAudioCaptureUsageDescription": "Rawcut records system audio while you record your screen."
+      }
+    },
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "AudioVideo"
+    },
+    "publish": {
+      "provider": "github"
+    }
+  }
+}

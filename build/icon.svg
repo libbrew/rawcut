@@ -1,0 +1,8 @@
+<!-- Rawcut icon: the R of Rawcut with a playhead cutting through it. Uses the Inter font (weight 900). -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="-12.14 -12.14 124.27 124.27">
+  <rect width="100" height="100" rx="22" fill="#2952E3"/>
+  <text x="44" y="72" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="64" fill="#FFFFFF">R</text>
+  <path d="M66 22V82" stroke="#2952E3" stroke-width="9"/>
+  <path d="M66 27V80" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round"/>
+  <rect x="60" y="17" width="12" height="9" rx="3" fill="#FFFFFF"/>
+</svg>

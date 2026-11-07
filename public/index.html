@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rawcut</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+<link rel="icon" href="/icon.png">
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="#/record">
+    <img src="/icon.png" width="22" height="22" alt="" style="border-radius:5px">
+    Rawcut
+  </a>
+  <nav aria-label="Main">
+    <a href="#/record" data-nav="record">Record</a>
+    <a href="#/projects" data-nav="projects">Projects</a>
+    <a href="#/settings" data-nav="settings">Settings</a>
+  </nav>
+  <a class="brain" id="brainBadge" href="#/settings" title="The AI that edits for you"></a>
+</header>
+<main id="view"></main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="/app.js" type="module"></script>
+</body>
+</html>
