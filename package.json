@@ -1,6 +1,8 @@
 {
   "name": "rawcut",
   "version": "1.0.0",
+  "repository": { "type": "git", "url": "https://github.com/libbrew/rawcut.git" },
+  "homepage": "https://github.com/libbrew/rawcut",
   "description": "Free, open-source AI video editor. Record your screen, connect your own AI (Claude Code, Codex, Ollama or any API key) and it edits with real b-roll, real memes and real sound effects. No AI-generated media.",
   "type": "module",
   "main": "electron/main.js",
@@ -99,7 +101,10 @@
       "category": "AudioVideo"
     },
     "publish": {
-      "provider": "github"
+      "provider": "github",
+      "owner": "libbrew",
+      "repo": "rawcut",
+      "releaseType": "draft"
     }
   }
 }
