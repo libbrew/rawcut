@@ -37,7 +37,11 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      # Retry: npm ci downloads ffmpeg and Electron, and a network blip shouldn't fail the build.
+      - name: Install dependencies
+        shell: bash
+        run: |
+          for i in 1 2 3; do npm ci && exit 0; echo "npm ci failed (try $i), retrying in 20s…"; sleep 20; done; exit 1
       - name: Build and publish
         run: npx electron-builder --publish ${{ startsWith(github.ref, 'refs/tags/') && 'always' || 'never' }}
         env:
