@@ -1,6 +1,6 @@
 {
   "name": "rawcut",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "repository": { "type": "git", "url": "https://github.com/libbrew/rawcut.git" },
   "homepage": "https://github.com/libbrew/rawcut",
   "author": { "name": "libbrew", "email": "270131780+libbrew@users.noreply.github.com" },
